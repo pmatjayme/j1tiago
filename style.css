@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
 :root {
-    --cor-de-fundo: #1E1E1E;
-    --verde: #6FFF57;
+    --cor-de-fundo: black;
+    --verde: rgba(255, 0, 0, 0.651);
     --branco: #FFFFFF;
-    --botao-ativo: #3A375E;
-    --botao-inativo: rgba(58, 55, 94, 0.5);
-    --texto-fundo: rgba(58, 55, 94, 0.3);
+    --botao-ativo: #5e3737;
+    --botao-inativo: rgba(94, 55, 55, 0.5);
+    --texto-fundo: rgba(94, 55, 55, 0.3);
 }
 
 body {
@@ -27,7 +27,7 @@ body {
 }
 
 .titulo-principal {
-    text-align: left;
+    text-align: center;
     width: 100%;
     font-size: 32px;
 }
@@ -60,6 +60,30 @@ body {
     display: block;
 }
 
+.abas-textos{
+    background-color: var(--cor-de-fundo);
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
+}
+
+.aba-conteudo.ativo{
+    display: block;
+}
+
+.aba-conteudo{
+    display: none;
+}
+
+.aba-conteudo-titulo-principal{
+    font-size: 28px;
+    text-align: center;
+}
+
+.aba-conteudo-titulo-secundario{
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
+}
 
 @media screen and (min-width: 768px) {
     .botoes {
@@ -73,4 +97,9 @@ body {
     .botao:last-child {
         border-radius: 0 40px 0 0;
     }
+}
+
+.botao.ativo{
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
 }
