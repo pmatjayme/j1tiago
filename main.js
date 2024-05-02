@@ -21,7 +21,7 @@ const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
 
 function atualizaCronometro(){
     for (let i=0; i<contadores.length; i++){
-        contadores[i].textContent = calculaTempo (tempos[i]);
+        contadores[i].innerHTML = calculaTempo (tempos[i]);
     }
 }
 
@@ -45,7 +45,28 @@ function calculaTempo (tempoObjetivo) {
     horas %= 24;
 
     if(tempoFinal > 0){
-        return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
+        let contador = '';
+        contador += '<div class="contador-digito">';
+        contador += '   <p class="contador-digito-numero">'+dias+'</p>';
+        contador += '   <p class="contador-digito-texto">dias</p>';
+        contador += '</div>';
+
+        contador += '<div class="contador-digito">';
+        contador += '   <p class="contador-digito-numero">'+horas+'</p>';
+        contador += '   <p class="contador-digito-texto">horas</p>';
+        contador += '</div>';
+
+        contador += '<div class="contador-digito">';
+        contador += '   <p class="contador-digito-numero">'+minutos+'</p>';
+        contador += '   <p class="contador-digito-texto">minutos</p>';
+        contador += '</div>';
+
+        contador += '<div class="contador-digito">';
+        contador += '   <p class="contador-digito-numero">'+segundos+'</p>';
+        contador += '   <p class="contador-digito-texto">segundos</p>';
+        contador += '</div>';
+
+        return contador;
     } else{
         return "Prazo Finalizado";
     }
